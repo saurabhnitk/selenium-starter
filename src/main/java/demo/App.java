@@ -11,17 +11,20 @@ public class App {
         //SearchAmazon search = new SearchAmazon();
         //BookMyShow links = new BookMyShow();
         //WindowHandle windowHandle = new WindowHandle();
-        NestedFrames nf = new NestedFrames();
+        //NestedFrames nf = new NestedFrames();
+        LinkedinPost post = new LinkedinPost();
 
         //search.testCase01();
         //links.testCase01();
         //windowHandle.testCase01();
-        nf.testCase01();
+        //nf.testCase01();
+        post.createPost();
 
         //search.endTest();
         //links.endTest();
         //windowHandle.endTest();
-        nf.endTest();
+        //nf.endTest();
+        post.endTest();
     }
 
     public static void main(String[] args) throws InterruptedException, MalformedURLException {
