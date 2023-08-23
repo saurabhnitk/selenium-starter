@@ -12,19 +12,20 @@ public class App {
         //BookMyShow links = new BookMyShow();
         //WindowHandle windowHandle = new WindowHandle();
         //NestedFrames nf = new NestedFrames();
-        LinkedinPost post = new LinkedinPost();
-
+        //LinkedinPost post = new LinkedinPost();
+        ImageUrls i = new ImageUrls();
         //search.testCase01();
         //links.testCase01();
         //windowHandle.testCase01();
         //nf.testCase01();
-        post.createPost();
-
+        //post.createPost();
+        i.testCase01();
         //search.endTest();
         //links.endTest();
         //windowHandle.endTest();
         //nf.endTest();
-        post.endTest();
+        //post.endTest();
+        i.endTest();
     }
 
     public static void main(String[] args) throws InterruptedException, MalformedURLException {

@@ -34,7 +34,7 @@ public class BookMyShow {
         driver.get("https://in.bookmyshow.com/explore/home/chennai");
         List<WebElement> links = driver.findElements(By.tagName("a"));
         Thread.sleep(1000);
-        System.out.println(links);
+        System.out.println(links.size());
 
     }
    
