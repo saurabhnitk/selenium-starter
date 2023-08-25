@@ -34,11 +34,14 @@ public class ImageUrls {
         System.out.println("Start Test case: testCase01");
         //Navigate to URL https://in.bookmyshow.com/explore/home/chennai
         driver.get("https://in.bookmyshow.com/explore/home/chennai");
-        //get webelement list for “Recommended Movies” Using Locator "XPath" "//div[contains(@class,'YeNog')]/div/a"
-        List<WebElement> imgs = driver.findElements(By.xpath("//div[contains(@class,'YeNog')]/div/a"));
+
+        //get webelement list for "Recommended Movies" Using Locator "XPath"
+        List<WebElement> imgs = driver.findElements(By.xpath("//h2[contains(text(),'Recommended Movies')]/../../../..//img"));
+        //List<WebElement> imgs = driver.findElements(By.xpath("//h2[contains(text(),'Recommended Movies)]/parent::div/parent::div/parent::div//img"));
+        System.out.println(imgs.size());
         //iterate over list and store "id" attribute in string variable using getAttribute("id") method and print it
         for(WebElement w : imgs){
-            String url = w.getAttribute("id");
+            String url = w.getAttribute("src");
             System.out.println(url);
         }
         System.out.println("end Test case: testCase01");
