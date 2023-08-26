@@ -3,6 +3,10 @@ package demo;
 import java.util.concurrent.TimeUnit;
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +40,7 @@ public class LinkedinPost {
     public  void createPost() throws InterruptedException, AWTException{
         System.out.println("Start Test case: testCase01");
         driver.get("https://in.linkedin.com/");
-        Thread.sleep(1000);
+        Thread.sleep(20000);
         WebElement emailBox = driver.findElement(By.id("session_key"));
         emailBox.sendKeys("sksaurabhrox@gmail.com");
         Thread.sleep(1000);
@@ -45,18 +49,40 @@ public class LinkedinPost {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'Sign in')]")).click();
         Thread.sleep(3000);
+        //click on name of the user
+        /*driver.findElement(By.xpath("//div[@class='t-16 t-black t-bold']")).click();
+        Thread.sleep(2000);*/
+
         driver.findElement(By.xpath("//div[@class='share-box-feed-entry__top-bar']")).click();
         Thread.sleep(2000);
         //Locate photo icon and click on it using Locator "Xpath"
         //WebElement photoIcon = driver.findElement(By.xpath("//button[@aria-label='Add media']/span[@class='share-promoted-detour-button__icon-container']"));
+        
         WebElement photoIcon = driver.findElement(By.xpath("(//button[@aria-label='Add media'])[1]"));
         //click on photoIcon
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();",photoIcon);
-        //send the file path
+        //use of Robot class to upload file
         Robot rb = new Robot();
-        photoIcon.sendKeys("C:/Users/saura/OneDrive/Pictures/Screenshots/2023-06-28.png");
-        Thread.sleep(4000);
+        //store the path of the file using StringSelection class object
+        StringSelection filePath = new StringSelection("C:\\Users\\saura\\Downloads\\id_front.jpg");
+        //copy the path to clipboard
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath, null);
+        //now press CTRL
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        Thread.sleep(1000);
+        //now press V
+        rb.keyPress(KeyEvent.VK_V);
+        Thread.sleep(1000);
+        //release V
+        rb.keyRelease(KeyEvent.VK_V);
+        //release CTRL
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        //press ENTER
+        rb.keyPress(KeyEvent.VK_ENTER);
+        //release ENTER
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(10000);
         //click on Next button
         driver.findElement(By.xpath("//span[text()='Next']")).click();
         Thread.sleep(2000);
