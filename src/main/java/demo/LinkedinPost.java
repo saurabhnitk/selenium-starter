@@ -52,14 +52,12 @@ public class LinkedinPost {
         //click on name of the user
         /*driver.findElement(By.xpath("//div[@class='t-16 t-black t-bold']")).click();
         Thread.sleep(2000);*/
-
+        //click on Start a Post box using Locator XPath
         driver.findElement(By.xpath("//div[@class='share-box-feed-entry__top-bar']")).click();
         Thread.sleep(2000);
-        //Locate photo icon and click on it using Locator "Xpath"
-        //WebElement photoIcon = driver.findElement(By.xpath("//button[@aria-label='Add media']/span[@class='share-promoted-detour-button__icon-container']"));
-        
+        //Locate photo icon using Locator "Xpath"        
         WebElement photoIcon = driver.findElement(By.xpath("(//button[@aria-label='Add media'])[1]"));
-        //click on photoIcon
+        //click on photoIcon using JavascriptExecutor class
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();",photoIcon);
         //use of Robot class to upload file
