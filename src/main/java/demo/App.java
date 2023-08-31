@@ -11,28 +11,28 @@ public class App {
         
         //SearchAmazon search = new SearchAmazon();
         //BookMyShow links = new BookMyShow();
-        //WindowHandle windowHandle = new WindowHandle();
+        WindowHandle windowHandle = new WindowHandle();
         //NestedFrames nf = new NestedFrames();
         //LinkedinPost post = new LinkedinPost();
         //ImageUrls i = new ImageUrls();
-        ImdbRatings imdb = new ImdbRatings();
+        //ImdbRatings imdb = new ImdbRatings();
 
 
         //search.testCase01();
         //links.testCase01();
-        //windowHandle.testCase01();
+        windowHandle.testCase01();
         //nf.testCase01();
         //post.createPost();
         //i.testCase01();
-        imdb.testCase01();
+        //imdb.testCase01();
 
         //search.endTest();
         //links.endTest();
-        //windowHandle.endTest();
+        windowHandle.endTest();
         //nf.endTest();
         //post.endTest();
         //i.endTest();
-        imdb.endTest();
+        //imdb.endTest();
     }
 
     public static void main(String[] args) throws InterruptedException, MalformedURLException, AWTException {

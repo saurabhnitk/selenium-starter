@@ -57,7 +57,7 @@ public class LinkedinPost {
         Thread.sleep(2000);
         //Locate photo icon using Locator "Xpath"        
         WebElement photoIcon = driver.findElement(By.xpath("(//button[@aria-label='Add media'])[1]"));
-        //click on photoIcon using JavascriptExecutor class
+        //click on photoIcon using JavascriptExecutor
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();",photoIcon);
         //use of Robot class to upload file
